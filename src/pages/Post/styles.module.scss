@@ -1,0 +1,89 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .backBtn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background-color: transparent;
+      border: none;
+      color: #0a0a0a;
+      font-size: 24px;
+      line-height: 32px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 24px;
+
+      .actionsItem {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #4f4f4f;
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      .actionBtn {
+        cursor: pointer;
+        background: none;
+        border: none;
+
+        .icon {
+          display: block;
+          width: 32px;
+          height: 32px;
+          color: #3a35418a;
+        }
+      }
+
+      .dislikeBtn.active {
+        .icon {
+          color: #eb5757;
+        }
+      }
+
+      .likeBtn.active {
+        .icon {
+          color: #219653;
+        }
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .title {
+      text-align: center;
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 700;
+    }
+
+    .image,
+    .text {
+      padding: 0 146px;
+    }
+
+    .text {
+      font-size: 18px;
+      line-height: 26px;
+      color: #0a0a0a;
+    }
+  }
+}

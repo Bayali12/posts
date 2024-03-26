@@ -1,0 +1,117 @@
+.post {
+  width: calc(100% / 2 - 12px);
+  border: 1px solid #f4f4f4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.04), 0 2px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+  transition: 0.3s ease-in;
+
+  &:hover {
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.116), 0 2px 6px 0 rgba(0, 0, 0, 0.116), 0 10px 20px 0 rgba(0, 0, 0, 0.116);
+  }
+
+  .image {
+    display: block;
+    height: 273px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .body {
+    padding: 24px 16px 32px 16px;
+
+    .title {
+      font-size: 28px;
+      line-height: 32px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+
+      .actions {
+        display: flex;
+        gap: 24px;
+
+        .actionsItem {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: #4f4f4f;
+          font-size: 16px;
+          line-height: 16px;
+        }
+
+        .actionBtn {
+          cursor: pointer;
+          background: none;
+          border: none;
+
+          .icon {
+            display: block;
+            width: 32px;
+            height: 32px;
+            color: #3a35418a;
+          }
+        }
+
+        .dislikeBtn.active {
+          .icon {
+            color: #eb5757;
+          }
+        }
+
+        .likeBtn.active {
+          .icon {
+            color: #219653;
+          }
+        }
+      }
+
+      .openBtn {
+        font-size: 16px;
+        line-height: 19px;
+        padding: 14px 24px;
+        background: transparent;
+        border: 2px solid #0a0a0a;
+        border-radius: 60px;
+        color: #0a0a0a;
+        text-decoration: none;
+        transition: 0.2s ease-in;
+
+        &:hover {
+          border-color: #d3d3d3;
+        }
+      }
+    }
+  }
+}
+
+.fullPost {
+  width: 100%;
+
+  .image {
+    height: 600px;
+  }
+
+  .body {
+    position: relative;
+
+    .title,
+    .description {
+      margin-bottom: 32px;
+    }
+
+    .footer {
+      justify-content: flex-end;
+
+      .actions {
+        position: absolute;
+        top: 24px;
+        right: 16px;
+      }
+    }
+  }
+}
