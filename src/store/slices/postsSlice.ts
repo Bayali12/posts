@@ -109,7 +109,14 @@ const postsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchPostById.fulfilled, (state, action) => {
-        state.currentPost = transformPost(action.payload);
+        const existingPostIndex = state.posts.findIndex((post) => post.id === action.payload.id);
+        const { id, title, body } = action.payload;
+
+        if (existingPostIndex !== -1) {
+          state.posts[existingPostIndex] = { ...{ id, title, body }, ...state.posts[existingPostIndex] };
+        } else {
+          state.posts.push(transformPost(action.payload));
+        }
         state.isLoading = false;
       })
       .addCase(fetchPostById.rejected, (state) => {

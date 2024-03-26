@@ -15,7 +15,9 @@ import styles from './styles.module.scss';
 export const Post = () => {
   const dispatch = useAppDispatch();
   const { id } = useParams();
-  const { currentPost, isLoading, likedPosts, dislikedPosts } = useAppSelector((state) => state.postsState);
+  const { posts, isLoading, likedPosts, dislikedPosts } = useAppSelector((state) => state.postsState);
+
+  const currentPost = posts.find((item) => item.id === Number(id));
 
   useEffect(() => {
     dispatch(fetchPostById(Number(id)));
